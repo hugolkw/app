@@ -123,7 +123,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Critter" id="gyn-gy-qyu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WmW-UJ-UXb"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WmW-UJ-UXb">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="dVg-NZ-hvx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Emj-m2-vYg">
                             <connections>
                                 <segue destination="AnM-Hk-WX5" kind="unwind" unwindAction="unwindToCritterListWithSender:" id="SyS-FF-cJg"/>
