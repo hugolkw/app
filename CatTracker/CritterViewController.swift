@@ -21,6 +21,7 @@ class CritterViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        nameTextField.delegate = self
         updateSaveButtonState()
     }
 
@@ -93,7 +94,6 @@ class CritterViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     //MARK: Private methods
     private func updateSaveButtonState() {
         let text = nameTextField.text ?? ""
-        print(!text.isEmpty)
         saveButton.isEnabled = !text.isEmpty
     }
 
