@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2329F4E71F9E031C00652048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F4E61F9E031C00652048 /* AppDelegate.swift */; };
-		2329F4E91F9E031C00652048 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F4E81F9E031C00652048 /* ViewController.swift */; };
+		2329F4E91F9E031C00652048 /* CritterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F4E81F9E031C00652048 /* CritterViewController.swift */; };
 		2329F4EC1F9E031C00652048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2329F4EA1F9E031C00652048 /* Main.storyboard */; };
 		2329F4EE1F9E031C00652048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2329F4ED1F9E031C00652048 /* Assets.xcassets */; };
 		2329F4F11F9E031C00652048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2329F4EF1F9E031C00652048 /* LaunchScreen.storyboard */; };
 		2329F4FC1F9E031C00652048 /* CatTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F4FB1F9E031C00652048 /* CatTrackerTests.swift */; };
+		2329F5071F9E0A3100652048 /* Critter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F5061F9E0A3100652048 /* Critter.swift */; };
+		2329F5091F9E0AC500652048 /* CritterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F5081F9E0AC500652048 /* CritterTableViewCell.swift */; };
+		2329F50B1F9E0C8100652048 /* CritterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F50A1F9E0C8100652048 /* CritterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +31,7 @@
 /* Begin PBXFileReference section */
 		2329F4E31F9E031C00652048 /* CatTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2329F4E61F9E031C00652048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2329F4E81F9E031C00652048 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2329F4E81F9E031C00652048 /* CritterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterViewController.swift; sourceTree = "<group>"; };
 		2329F4EB1F9E031C00652048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2329F4ED1F9E031C00652048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2329F4F01F9E031C00652048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,9 @@
 		2329F4F71F9E031C00652048 /* CatTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2329F4FB1F9E031C00652048 /* CatTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTrackerTests.swift; sourceTree = "<group>"; };
 		2329F4FD1F9E031C00652048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2329F5061F9E0A3100652048 /* Critter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Critter.swift; sourceTree = "<group>"; };
+		2329F5081F9E0AC500652048 /* CritterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CritterTableViewCell.swift; sourceTree = "<group>"; };
+		2329F50A1F9E0C8100652048 /* CritterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CritterTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +84,14 @@
 			isa = PBXGroup;
 			children = (
 				2329F4E61F9E031C00652048 /* AppDelegate.swift */,
-				2329F4E81F9E031C00652048 /* ViewController.swift */,
+				2329F4E81F9E031C00652048 /* CritterViewController.swift */,
 				2329F4EA1F9E031C00652048 /* Main.storyboard */,
+				2329F50A1F9E0C8100652048 /* CritterTableViewController.swift */,
+				2329F5081F9E0AC500652048 /* CritterTableViewCell.swift */,
 				2329F4ED1F9E031C00652048 /* Assets.xcassets */,
 				2329F4EF1F9E031C00652048 /* LaunchScreen.storyboard */,
 				2329F4F21F9E031C00652048 /* Info.plist */,
+				2329F5061F9E0A3100652048 /* Critter.swift */,
 			);
 			path = CatTracker;
 			sourceTree = "<group>";
@@ -199,7 +208,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2329F4E91F9E031C00652048 /* ViewController.swift in Sources */,
+				2329F4E91F9E031C00652048 /* CritterViewController.swift in Sources */,
+				2329F5091F9E0AC500652048 /* CritterTableViewCell.swift in Sources */,
+				2329F50B1F9E0C8100652048 /* CritterTableViewController.swift in Sources */,
+				2329F5071F9E0A3100652048 /* Critter.swift in Sources */,
 				2329F4E71F9E031C00652048 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
