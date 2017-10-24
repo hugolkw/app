@@ -30,9 +30,11 @@ class CritterTableViewController: UITableViewController {
             critters.append( critter )
             tableView.insertRows(at: [newIndexPath], with:
                 .automatic)}
+            saveCritters()
         }
     }
 
+    //MARK: Private Methods
     private func loadSampleCats() {
         let photo1 = UIImage(named: "cat1")
         let photo2 = UIImage(named: "cat2")
@@ -50,11 +52,26 @@ class CritterTableViewController: UITableViewController {
         critters += [cat1, cat2, cat3]
     }
     
+    private func saveCritters() {
+        let isSuccessfulSave =
+            NSKeyedArchiver.archiveRootObject( critters, toFile:
+                Critter.ArchiveURL!.path)
+        if isSuccessfulSave {
+            os_log("Critters successfully saved", log: OSLog.default,
+                                                      type: .debug)
+        } else {
+            os_log("Failed to save", log: OSLog.default, type: .debug)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
-        // Load the sample data
-        loadSampleCats()
+        if let savedCritters = loadCritters() {
+            critters += savedCritters
+        } else {
+            loadSampleCats()
+        }
     
     }
 
@@ -106,6 +123,7 @@ class CritterTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             critters.remove(at: indexPath.row)
+            saveCritters()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -157,6 +175,8 @@ class CritterTableViewController: UITableViewController {
         }
     }
     
-    
+    private func loadCritters() -> [Critter]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (Critter.ArchiveURL?.path)!) as? [Critter]
+    }
    
 }
