@@ -22,6 +22,12 @@ class CritterViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         nameTextField.delegate = self
+        if let critter = critter {
+            navigationItem.title = critter.name
+            nameTextField.text = critter.name
+            photoImageView.image = critter.photo
+            detailsTextField.text = critter.details
+        }
         updateSaveButtonState()
     }
 

@@ -5,7 +5,7 @@
 //  Created by HUGOLEE on 23/10/2017.
 //  Copyright © 2017 edu.cuhk.cmsc5736.hugolkw. All rights reserved.
 //
-
+import os.log
 import UIKit
 
 class CritterTableViewController: UITableViewController {
@@ -121,15 +121,35 @@ class CritterTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch (segue.identifier ?? "") {
+        case "AddItem":
+            os_log("Adding a new critter.", log: OSLog.default, type: .debug)
+        case "ShowDetail":
+            guard let critterDetailViewController = segue.destination as?
+                CritterViewController else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let selectedCritterCell = sender as? CritterTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            guard let indexPath = tableView.indexPath(for: selectedCritterCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            let selectedCritter = critters[indexPath.row]
+            critterDetailViewController.critter = selectedCritter
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
-    */
+    
     
    
 }
