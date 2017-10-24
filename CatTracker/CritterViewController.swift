@@ -72,8 +72,20 @@ class CritterViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     // MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        let isPresentingInAddCritterMode =
+            presentingViewController is UINavigationController
+        if isPresentingInAddCritterMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController =
+            navigationController {
+            owningNavigationController.popViewController(animated:
+                true)
+        } else {
+            fatalError("The CritterViewController is not inside a navigation controller.")
+        }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         super.prepare(for: segue, sender: sender)
