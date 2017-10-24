@@ -39,6 +39,7 @@ class CritterTableViewController: UITableViewController {
         let photo1 = UIImage(named: "cat1")
         let photo2 = UIImage(named: "cat2")
         let photo3 = UIImage(named: "cat3")
+        let photo4 = UIImage(named: "internet")
         guard let cat1 = Critter(name: "ChungChi Cat", photo: photo1, details:
             "in ChungChi restaurant") else {
                 fatalError("Unable to instantiate cat1")
@@ -49,7 +50,10 @@ class CritterTableViewController: UITableViewController {
         guard let cat3 = Critter(name: "NA Cat", photo: photo3, details: "near NA water tower") else {
                 fatalError("Unable to instantiate cat3")
         }
-        critters += [cat1, cat2, cat3]
+        guard let internet = Critter(name: "network bird 1", photo: photo4, details: "on internet") else {
+            fatalError("Unable to instantiate internet")
+        }
+        critters += [cat1, cat2, cat3, internet]
     }
     
     private func saveCritters() {
@@ -72,7 +76,6 @@ class CritterTableViewController: UITableViewController {
         } else {
             loadSampleCats()
         }
-    
     }
 
     override func didReceiveMemoryWarning() {
