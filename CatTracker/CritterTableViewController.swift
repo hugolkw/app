@@ -72,7 +72,7 @@ class CritterTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
         if let savedCritters = loadCritters() {
-            critters += savedCritters
+           critters += savedCritters
         } else {
             loadSampleCats()
         }
