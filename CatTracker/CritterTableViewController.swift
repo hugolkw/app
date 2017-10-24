@@ -19,11 +19,17 @@ class CritterTableViewController: UITableViewController {
         if let sourceViewController = sender.source as?
             CritterViewController, let critter =
             sourceViewController.critter {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow
+            {
+                critters[selectedIndexPath.row] = critter
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
             let newIndexPath = IndexPath(row: critters.count,
                                          section: 0)
             critters.append( critter )
             tableView.insertRows(at: [newIndexPath], with:
-                .automatic)
+                .automatic)}
         }
     }
 
